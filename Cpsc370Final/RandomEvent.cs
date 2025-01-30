@@ -1,62 +1,64 @@
-namespace Cpsc370Final
+namespace Cpsc370Final;
 using System;
 
-class RandomEvent{
+public static class RandomEvent{
 
-    static string getRandomEvent(){
-        int randomEvent;
-        int numSandies = SandieBank.initialize();
-        int randomNumber = genRandomNumber();
+    public static int GetRandomEvent()
+    {
+        int randomEvent = 0;
+        int numSandies = SandieBank.SandieCount;
+        int randomNumber = GenRandomNumber();
         switch(randomNumber){
-            case: 1
-                randomEvent = taxesEvent(numSandies);
+            case 1:
+                randomEvent = TaxesEvent(numSandies);
                 break;
             case 2:
-                randomEvent = longerWordEvent();
+                //randomEvent = longerWordEvent();
                 break;
             case 3:
-                (bool)randomEvent = chocolateEvent();
+                randomEvent = ChocolateEvent();
                 break;
             case 4:
-                randomEvent = treatEvent(numSandies);
+                randomEvent = TreatEvent(numSandies);
                 break;
             case 5:
-                randomEvent = walkEvent(numSandies);
+                randomEvent = WalkEvent(numSandies);
                 break;
             case 6:
-                (string)randomEvent = "Error";                
+                randomEvent = -1;                
                 break;
         }
         
         return randomEvent;
     }
 
-    private static int taxesEvent(int numSandies){
-        int taxedAmount = (double)numSandies * 0.8;
-        return taxedAmount;
+    public static int TaxesEvent(int numSandies){
+        double taxedAmount = numSandies * 0.8;
+        return (int)taxedAmount;
     }
 
-    private static string longerWordEvent(){
-        return " "
+    public static string LongerWordEvent()
+    {
+        return " ";
     }
 
-    private static bool chocolateEvent(){
-        return true;
+    public static int ChocolateEvent(){
+        return 0;
     }
 
-    private static int treatEvent(int numSandies){
-        int boostedAmount = (double)numSandies * 1.2;
-        return boostedAmount;
-
-    }
-
-    private static int walkEvent(int numSandies){
-        int boostedAmount = (double)numSandies * 1.2;
-        return boostedAmount;
+    public static int TreatEvent(int numSandies){
+        double boostedAmount = numSandies * 1.2;
+        return (int)boostedAmount;
 
     }
 
-    private static int genRandomNumber(){
+    public static int WalkEvent(int numSandies){
+        double boostedAmount = numSandies * 1.2;
+        return (int)boostedAmount;
+
+    }
+
+    public static int GenRandomNumber(){
         Random rnd = new Random();
         int randomInteger = rnd.Next(1,5);
         return randomInteger;
