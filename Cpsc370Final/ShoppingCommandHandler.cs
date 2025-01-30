@@ -25,7 +25,7 @@ public class ShoppingCommandHandler
 
     private static void Buy(Command command)
     {
-        //buy an upgrade
+        Shop.BuyItem(command.Noun);
     }
 
     private static void Exit(Command command)

@@ -9,5 +9,5 @@ public enum ItemType
     Casino,
     SandieRivals,
     TypeLess,
-    Outfit
+    Costume
 }
