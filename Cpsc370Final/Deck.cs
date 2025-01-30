@@ -37,11 +37,12 @@ public class Deck
     public override string ToString()
     {
         string sb = "";
-        foreach (var card in cards)
+        foreach (Card card in cards)
         {
             sb += card.ToString() + " ";
         }
-        return sb.ToString();
+
+        return sb;
     }
 
     public int Size()

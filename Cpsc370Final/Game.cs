@@ -6,8 +6,11 @@ public static class Game
     
     public static void Play()
     {
-        Initialize();
-        
+
+        if (!isPlaying)
+        {
+            Initialize();
+        }
         while (isPlaying)
         {
             Command command = CommandProcessor.GetCommand();
@@ -23,10 +26,12 @@ public static class Game
     {
         isPlaying = false;
     }
+    
 
     private static void Initialize()
     {
         isPlaying = true;
+        Player.Initialize();
         SandieBank.initialize();
         States.Initialize();
     }

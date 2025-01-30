@@ -29,12 +29,16 @@ public class GamblingCommandValidater
             }
             else
             {
-                if (int.Parse(command.Noun) > 10 && int.Parse(command.Noun) < 1000)
+                if (int.Parse(command.Noun) >= 10 && int.Parse(command.Noun) <= 1000 && int.Parse(command.Noun) <= SandieBank.SandieCount)
                 {
                     Debugger.Write("Valid number");
                     command.IsValid = true;
                 }
-                IO.WriteLine("I don't know the noun " + command.Noun + ".");
+                else
+                {
+                    IO.WriteLine("Invalid noun or bet/raise values amount. All bet/raise values must be at least 10 and at most 1000");
+                }
+                
             }
         }
         else
