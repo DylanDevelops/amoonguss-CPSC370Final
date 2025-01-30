@@ -3,11 +3,11 @@
 public class Vocabulary
 {
     public static List<string> notStandaloneVerbs = new List<string>()
-        {"buy"};
+        {"buy", "raise", "bet", "play"};
     public static List<string> standaloneVerbs = new List<string>()
-        {"click", "casino", "rivals"};
+        {"click", "casino", "rivals", "hit", "fold", "stay", "check", "exit"};
     public static List<string> nouns = new List<string>()
-        {"casino", "rivals"};
+        {"casino", "rivals", "poker", "blackjack"};
 
     public static bool IsVerb(string word)
     {
