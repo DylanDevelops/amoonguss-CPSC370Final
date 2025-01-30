@@ -9,4 +9,5 @@ public abstract class ItemSandiesPerClick : Item
         base.Buy();
         Player.UpdateSandiesPerClick(SandiesPerClickIncrease);
     }
+    
 }

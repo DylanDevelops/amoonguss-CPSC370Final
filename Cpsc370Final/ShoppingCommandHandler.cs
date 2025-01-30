@@ -2,10 +2,12 @@
 
 public class ShoppingCommandHandler
 {
+    private static Shop Shop = new Shop();
     private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
     {
         {"buy", Buy},
-        {"exit", Exit}
+        {"exit", Exit},
+        {"show", Show}
     };
     
     
@@ -25,11 +27,16 @@ public class ShoppingCommandHandler
 
     private static void Buy(Command command)
     {
-
+        Shop.BuyItem(command.Noun);
     }
 
     private static void Exit(Command command)
     {
         States.ChangeState(StateType.Clicking);
+    }
+
+    private static void Show(Command command)
+    {
+        Shop.DisplayPrices();
     }
 }

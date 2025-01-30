@@ -37,25 +37,45 @@ public class ClickingCommandHandler
     
     private static void Shop(Command command)
     {
+        IO.WriteLine("You are entering the shop!");
         States.ChangeState(StateType.Shopping);
+            IO.WriteLine("      Shop        ");
+            IO.WriteLine("type show prices to see prices");
     }
     
     private static void Rivals(Command command)
     {
-        States.ChangeState(StateType.Rivaling);
+        if (Cpsc370Final.Rivals.hasRivals)
+        {
+            IO.WriteLine("You are entering sandie rivals!");
+        
+            States.ChangeState(StateType.Rivaling);
+        }
+        else
+        {
+            IO.WriteLine("You don't have access to sandie rivals!");
+        }
     }
     
     private static void Casino(Command command)
     {
-        IO.WriteLine("You are entering the casino!");
-        IO.WriteLine("You can play blackjack");
-        IO.WriteLine("Type play blackjack");
-        IO.WriteLine("you must bet before playing blackjack by typing bet (amount)");
-        IO.WriteLine("minimum bet is 10");
-        IO.WriteLine("You can also play slots");
-        IO.WriteLine("Type play slots");
-        IO.WriteLine("It costs 10 to play slots");
+        if (Cpsc370Final.Casino.hasCasino)
+        {
+            IO.WriteLine("You are entering the casino!");
+            IO.WriteLine("You can play blackjack");
+            IO.WriteLine("Type play blackjack");
+            IO.WriteLine("you must bet before playing blackjack by typing bet (amount)");
+            IO.WriteLine("minimum bet is 10");
+            IO.WriteLine("You can also play slots");
+            IO.WriteLine("Type play slots");
+            IO.WriteLine("It costs 10 to play slots");
         
-        States.ChangeState(StateType.Gambling);
+            States.ChangeState(StateType.Gambling);
+        }
+        else
+        {
+            IO.WriteLine("You don't have access to casino!");
+        }
+        
     }
 }

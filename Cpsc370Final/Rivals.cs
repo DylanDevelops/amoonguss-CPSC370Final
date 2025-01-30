@@ -2,5 +2,5 @@
 
 public class Rivals
 {
-    
+    public static bool hasRivals = false;
 }
