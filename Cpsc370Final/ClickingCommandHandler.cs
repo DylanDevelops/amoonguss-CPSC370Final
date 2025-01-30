@@ -5,11 +5,11 @@ public class ClickingCommandHandler
     private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
     {
         {"click", Click},
+        {"quit", Quit},
         {"shop", Shop},
         {"rivals", Rivals},
-        {"casino", Casino},
+        {"casino", Casino}
     };
-    
     
     public static void Handle(Command command)
     {
@@ -24,10 +24,15 @@ public class ClickingCommandHandler
         }
     }
 
-
     private static void Click(Command command)
     {
         //whatever click does
+        IO.Write("You clicked: +1");
+    }
+
+    private static void Quit(Command command)
+    {
+        Game.Quit();
     }
     
     private static void Shop(Command command)
