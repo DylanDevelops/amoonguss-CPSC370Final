@@ -26,7 +26,7 @@ public static class Blackjack
                 if (TotalValue(playerHand) > 21)
                 {
                         IO.WriteLine("You Lose!");
-                        //endthegame
+                        Casino.Lose();
                 }
                 else
                 {
@@ -42,7 +42,7 @@ public static class Blackjack
                 if (TotalValue(playerHand) > 21)
                 {
                         IO.WriteLine("You Lose!");
-                        //endthegame
+                        Casino.Lose();
                 }
                 else
                 {
@@ -58,19 +58,17 @@ public static class Blackjack
                 if (TotalValue(dealerHand) > 21)
                 {
                         IO.WriteLine("You Win!");
-                        //add winnings
-                        //endthegame
+                        Casino.Win();
                 }
                 else if (TotalValue(dealerHand) > TotalValue(playerHand))
                 {
                         IO.WriteLine("You Lose!");
-                        //endthegame
+                        Casino.Lose();
                 }
                 else
                 {
                         IO.WriteLine("You Win!");
-                        //add winnings
-                        //endthegame  
+                        Casino.Win();
                 } 
         }
         

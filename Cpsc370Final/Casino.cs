@@ -53,6 +53,27 @@ public static class Casino
             Blackjack.stay();
         }
     }
+
+    public static void Win()
+    {
+        if (inBlackjack)
+        {
+            //add double bet to playerbank
+            inBlackjack = false;
+        }
+        else if (inPoker)
+        {
+            //add winning to playerbank
+            inPoker = false;
+        }
+    }
+
+    public static void Lose()
+    {
+        bet = 0;
+        inBlackjack = false;
+        inPoker = false;
+    }
     public static void Exit()
     {
         States.ChangeState(StateType.Clicking);
