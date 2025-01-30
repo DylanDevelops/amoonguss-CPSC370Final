@@ -1,0 +1,47 @@
+﻿namespace Cpsc370Final;
+
+public class ClickingCommandHandler
+{
+    private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
+    {
+        {"click", Click},
+        {"shop", Shop},
+        {"rivals", Rivals},
+        {"casino", Casino},
+    };
+    
+    
+    public static void Handle(Command command)
+    {
+        if (commandMap.ContainsKey(command.Verb))
+        {
+            Action<Command> action = commandMap[command.Verb];
+            action.Invoke(command);
+        }
+        else
+        {
+            IO.WriteLine("I don't understand that command.");
+        }
+    }
+
+
+    private static void Click(Command command)
+    {
+        //whatever click does
+    }
+    
+    private static void Shop(Command command)
+    {
+        //make it switch to shop game state
+    }
+    
+    private static void Rivals(Command command)
+    {
+        //make it switch to rivals state
+    }
+    
+    private static void Casino(Command command)
+    {
+        //make it switch to gambling state
+    }
+}
