@@ -2,14 +2,14 @@ namespace Cpsc370Final;
 
 public static class PlayerClass
 {
-    public int NumberOfSandies { get; private set; }
+    public static int NumberOfSandies { get; private set; }
     
-    public int SandiesToAdd {get; private set;}
+    public static int SandiesToAdd {get; private set;}
 
-    public int OwnedJons { get; private set;}
+    public static int OwnedJons { get; private set;}
     
 
-    public void Click()
+    public static void Click()
     {
         //Initialize SandiesToAdd
         SandiesToAdd = 1;
