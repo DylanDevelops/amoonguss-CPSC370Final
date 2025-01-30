@@ -10,13 +10,13 @@ public static class Casino
     public static void setBet(int amount)
     {
         bet = amount;
-        //remove amount from playerbank
+        SandieBank.removeSandiesFromBank(amount);
     }
 
     public static void raiseBet(int amount)
     {
         bet += amount;
-        //remove amount from playerbank
+        SandieBank.removeSandiesFromBank(amount);
     }
 
     public static void Play(string gameName)
@@ -58,7 +58,7 @@ public static class Casino
     {
         if (inBlackjack)
         {
-            //add double bet to playerbank
+            SandieBank.addSandiesToBank(bet);
             inBlackjack = false;
         }
         else if (inPoker)

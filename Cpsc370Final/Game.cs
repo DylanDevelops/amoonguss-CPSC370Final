@@ -27,7 +27,7 @@ public static class Game
     private static void Initialize()
     {
         isPlaying = true;
-        
+        SandieBank.initialize();
         States.Initialize();
     }
 }
