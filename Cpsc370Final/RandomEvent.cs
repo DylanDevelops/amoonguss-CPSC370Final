@@ -23,6 +23,9 @@ class RandomEvent{
             case 5:
                 randomEvent = walkEvent(numSandies);
                 break;
+            case 6:
+                (string)randomEvent = "Error";                
+                break;
         }
         
         return randomEvent;
@@ -58,14 +61,6 @@ class RandomEvent{
         int randomInteger = rnd.Next(1,5);
         return randomInteger;
     }
-
-
-
-
-
-
-
-
 
 
 
