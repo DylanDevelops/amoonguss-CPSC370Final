@@ -5,7 +5,7 @@ public class Vocabulary
     public static List<string> notStandaloneVerbs = new List<string>()
         {"buy"};
     public static List<string> standaloneVerbs = new List<string>()
-        {"click", "casino", "rivals"};
+        {"click", "quit", "casino", "rivals"};
     public static List<string> nouns = new List<string>()
         {"casino", "rivals"};
 
