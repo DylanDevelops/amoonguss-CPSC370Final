@@ -2,6 +2,7 @@
 
 public static class Casino
 {
+    public static bool hasCasino = false;
     public static int bet = 0;
 
     public static void setBet(int amount)

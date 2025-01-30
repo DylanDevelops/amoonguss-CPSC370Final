@@ -11,5 +11,6 @@ public class ItemJon : ItemSandiesPerClick
     {
         base.Buy();
         Inventory.AddJonsToInventory(1);
-    } 
+    }
+    
 }

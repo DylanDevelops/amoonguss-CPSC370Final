@@ -24,4 +24,9 @@ public abstract class Item
         }
         return false;
     }
+    
+    public int getCurrentCost()
+    {
+        return Cost;
+    }
 }

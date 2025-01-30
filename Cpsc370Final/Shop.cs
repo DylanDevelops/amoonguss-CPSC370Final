@@ -42,15 +42,48 @@ public class Shop
             case "casino":
                 Casino.Buy();
                 break;
-            case "sandie rivals":
+            case "rivals":
                 SandieRivals.Buy();
                 break;
-            case "type less":
+            case "typeless":
                 TypeLess.Buy();
                 break;
             case "costume":
                 Costume.Buy();
                 break;
         }
+    }
+
+    public void DisplayPrices()
+    {
+        IO.WriteLine($"~ jon: $" + Jon.getCurrentCost());
+        IO.WriteLine($"~ slingshot: $" + Slingshot.getCurrentCost());
+        IO.WriteLine($"~ cloner: $" + Cloner.getCurrentCost());
+        IO.WriteLine($"~ farm: $" + Farm.getCurrentCost());
+        if (Cpsc370Final.Casino.hasCasino)
+        {
+            IO.WriteLine($"~ casino: Purchased");
+        }
+        else
+        {
+            IO.WriteLine($"~ casino: $" + Casino.getCurrentCost());
+        }
+        if (Cpsc370Final.Rivals.hasRivals)
+        {
+            IO.WriteLine($"~ rivals: Purchased");
+        }
+        else
+        {
+            IO.WriteLine($"~ rivals: " + SandieRivals.getCurrentCost());
+        }
+        if (TypeLess.getOwnStatus())
+        {
+            IO.WriteLine($"~ typeless: Purchased");
+        }
+        else
+        {
+            IO.WriteLine($"~ typeless: " + TypeLess.getCurrentCost());
+        }
+        IO.WriteLine($"~ costume: " + Costume.getCurrentCost());
     }
 }

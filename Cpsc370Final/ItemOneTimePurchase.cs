@@ -14,4 +14,9 @@ public abstract class ItemOneTimePurchase : Item
         AlreadyOwns = true;
         base.Buy();
     }
+
+    public bool getOwnStatus()
+    {
+        return AlreadyOwns;
+    }
 }
