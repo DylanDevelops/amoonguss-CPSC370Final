@@ -1,44 +1,42 @@
 namespace Cpsc370Final.Tests;
 using Xunit;
-using NUnit.Framework;
 
 
 public class UnitTest1
 {
 
     [Fact]
-    public void testTaxesEvent(){
-        testAmount = RandomEvent.taxesEvent(10);
+    public void TestTaxesEvent(){
+        int testAmount = RandomEvent.TaxesEvent(10);
         Assert.Equal(8, testAmount);
     }
 
     [Fact]
-    public void testChocolateEvent(){
-        testMethod = RandomEvent.chocolateEvent();
-        Assert.That(true, testMethod);
+    public void TestChocolateEvent(){
+        int testMethod = RandomEvent.ChocolateEvent();
+        Assert.Equal(0, testMethod);
     }
 
     [Fact]
-    public void testTreatEvent(){
-        testAmount = RandomEvent.treatEvent(10);
+    public void TestTreatEvent(){
+        int testAmount = RandomEvent.TreatEvent(10);
         Assert.Equal(12, testAmount);
     }
 
     [Fact]
-    public void testWalkEvent(){
-        testAmount = RandomEvent.walkEvent(10);
+    public void TestWalkEvent(){
+        int testAmount = RandomEvent.WalkEvent(10);
         Assert.Equal(12, testAmount);
     }
 
     [Fact]
-    public void testRandomNumberGenerator(){
-        randomNumber = RandomEvent.genRandomNumber();
-        Assert.NotNull(randomNumber);
+    public void TestRandomNumberGenerator(){
+        Assert.NotNull(RandomEvent.GenRandomNumber());
     }
 
     [Fact]
-    public void testRandomEvent(){
-        randomEvent = RandomEvent.getRandomEvent();
-        Assert.NotEqual("Error", randomEvent);
+    public void TestRandomEvent(){
+        int randomEvent = RandomEvent.GetRandomEvent();
+        Assert.NotEqual(-1, randomEvent);
     }
 }
