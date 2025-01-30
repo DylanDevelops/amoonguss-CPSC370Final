@@ -26,7 +26,7 @@ public class ClickingCommandHandler
 
     private static void Click(Command command)
     {
-        IO.Write("You clicked: +1");
+        IO.Write("You clicked: +" + Player.SandiesPerClick);
         Player.Click();
     }
 
@@ -37,12 +37,12 @@ public class ClickingCommandHandler
     
     private static void Shop(Command command)
     {
-        //States.ChangeState(StateType.Shopping);
+        States.ChangeState(StateType.Shopping);
     }
     
     private static void Rivals(Command command)
     {
-        //States.ChangeState(StateType.Rivaling);
+        States.ChangeState(StateType.Rivaling);
     }
     
     private static void Casino(Command command)

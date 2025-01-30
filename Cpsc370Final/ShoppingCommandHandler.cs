@@ -30,6 +30,6 @@ public class ShoppingCommandHandler
 
     private static void Exit(Command command)
     {
-        //exit current game state and go back to clicking game state
+        States.ChangeState(StateType.Clicking);
     }
 }
