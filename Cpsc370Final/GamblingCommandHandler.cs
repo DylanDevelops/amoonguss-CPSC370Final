@@ -5,7 +5,13 @@ public class GamblingCommandHandler
     private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
     {
         {"bet", Bet},
-        {"exit", Exit}
+        {"exit", Exit},
+        {"raise", Raise},
+        {"hit", Hit},
+        {"fold", Fold},
+        {"stay", Stay},
+        {"check", Check},
+        {"play", Play}
     };
     
     
@@ -25,11 +31,37 @@ public class GamblingCommandHandler
 
     private static void Bet(Command command)
     {
-        //whatever bet does
+        Casino.setBet(int.Parse(command.Noun));
     }
     
     private static void Exit(Command command)
     {
-        //exit current game state and go back to clicking game state
+        Casino.Exit();
+    }
+
+    private static void Check(Command command) //poker
+    {
+        //stay at current bet
+    }
+    private static void Fold(Command command) //poker
+    {
+        //lose the game
+    }
+    private static void Raise(Command command) //poker
+    {
+        Casino.raiseBet(int.Parse(command.Noun));
+    }
+    private static void Stay(Command command) //blackjack
+    {
+        Casino.Stay();
+    }
+    private static void Hit(Command command)//blackjack
+    {
+        Casino.Hit();
+    }
+
+    private static void Play(Command command)
+    {
+        Casino.Play(command.Noun);
     }
 }

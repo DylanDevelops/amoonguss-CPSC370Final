@@ -29,6 +29,11 @@ public class GamblingCommandValidater
             }
             else
             {
+                if (int.Parse(command.Noun) > 10 && int.Parse(command.Noun) < 1000)
+                {
+                    Debugger.Write("Valid number");
+                    command.IsValid = true;
+                }
                 IO.WriteLine("I don't know the noun " + command.Noun + ".");
             }
         }
