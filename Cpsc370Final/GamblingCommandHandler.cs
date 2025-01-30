@@ -53,11 +53,15 @@ public class GamblingCommandHandler
     }
     private static void Stay(Command command) //blackjack
     {
-        Casino.Stay();
+        //command processor does not work with how i coded blackjack
+        //i will try to make it work when i make poker
+        //Casino.Stay();
     }
     private static void Hit(Command command)//blackjack
     {
-        Casino.Hit();
+        //command processor does not work with how i coded blackjack
+        //i will try to make it work when i make poker
+        //Casino.Hit();
     }
 
     private static void Play(Command command)

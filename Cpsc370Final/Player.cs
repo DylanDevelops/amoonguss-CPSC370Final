@@ -6,7 +6,7 @@ public static class Player
 
     public static void Initialize()
     {
-        SandiesPerClick = 1;
+        SandiesPerClick = 10;
     }
 
     public static void Click()

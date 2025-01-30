@@ -33,7 +33,9 @@ public static class RandomEvent{
     }
 
     public static int TaxesEvent(int numSandies){
+        IO.WriteLine("The IRS taxes some of your sandies.");
         double taxedAmount = numSandies * 0.8;
+        SandieBank.removeSandiesFromBank(numSandies - (int)taxedAmount);
         return (int)taxedAmount;
     }
 
@@ -43,17 +45,24 @@ public static class RandomEvent{
     }
 
     public static int ChocolateEvent(){
+        IO.WriteLine("Sandie ate some choclate.");
+        IO.WriteLine("Game Over");
+        Game.Quit();
         return 0;
     }
 
     public static int TreatEvent(int numSandies){
+        IO.WriteLine("You use some dog treats to attract some more sandies");
         double boostedAmount = numSandies * 1.2;
+        SandieBank.addSandiesToBank((int)boostedAmount - numSandies);
         return (int)boostedAmount;
 
     }
 
     public static int WalkEvent(int numSandies){
+        IO.WriteLine("You go on a walk with your sandies and end up with more then you originally had");
         double boostedAmount = numSandies * 1.2;
+        SandieBank.addSandiesToBank((int)boostedAmount - numSandies);
         return (int)boostedAmount;
 
     }

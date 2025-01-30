@@ -12,7 +12,7 @@ public class Card
     public static int JACK = 11;
     public static int QUEEN = 12;
     public static int KING = 13;
-    public static int ACE = 1;
+    public static int ACE = 14;
     
     //suit of card
     private int suit;
@@ -39,7 +39,7 @@ public class Card
 
     }
     //toString
-    public String toString()
+    public override string ToString()
     {
         String str = "";
         if(rank < 11)

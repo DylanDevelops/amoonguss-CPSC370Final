@@ -4,7 +4,7 @@ public class CommandProcessor
 {
     public static Command GetCommand()
     {
-        IO.WriteLine($"\n~ Sandies: $*MONEY HERE* ~");
+        IO.WriteLine($"\n~ Sandies: $" + SandieBank.SandieCount);
         IO.Write("Input: ");
         
         string input = IO.Read();

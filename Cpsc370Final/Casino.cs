@@ -3,7 +3,7 @@
 public static class Casino
 {
     public static bool inPoker = false;
-    public static bool inBlackjack = false;
+    
     
     public static int bet = 0;
 
@@ -25,7 +25,7 @@ public static class Casino
         {
             IO.Write("Already in Poker match");
         }
-        else if (inBlackjack)
+        else if (Blackjack.inBlackjack)
         {
             IO.Write("Already in Blackjack match");
         }
@@ -35,44 +35,41 @@ public static class Casino
         }
         else if (gameName.ToLower() == "blackjack")
         {
-            Blackjack.StartGame();
+            if (bet < 10)
+            {
+                IO.Write("minimum bet of 10 must be made before playing blackjack");
+            }
+            else
+            {
+                Blackjack.StartGame();
+            }
         }
     }
-
-    public static void Hit()
-    {
-        if (inBlackjack)
-        {
-            Blackjack.hit();
-        }
-    }
-    public static void Stay()
-    {
-        if (inBlackjack)
-        {
-            Blackjack.stay();
-        }
-    }
+    
 
     public static void Win()
     {
-        if (inBlackjack)
+        if (Blackjack.inBlackjack)
         {
-            SandieBank.addSandiesToBank(bet);
-            inBlackjack = false;
+            SandieBank.addSandiesToBank(2 * bet);
+            Blackjack.inBlackjack = false;
+            
         }
         else if (inPoker)
         {
             //add winning to playerbank
             inPoker = false;
         }
+        bet = 0;
+        Game.Play();
     }
 
     public static void Lose()
     {
         bet = 0;
-        inBlackjack = false;
+        Blackjack.inBlackjack = false;
         inPoker = false;
+        Game.Play();
     }
     public static void Exit()
     {
