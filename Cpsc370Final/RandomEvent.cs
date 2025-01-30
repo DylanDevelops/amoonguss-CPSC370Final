@@ -5,7 +5,7 @@ class RandomEvent{
 
     static string getRandomEvent(){
         int randomEvent;
-        int numSandies = "placeholder for method"
+        int numSandies = SandieBank.initialize();
         int randomNumber = genRandomNumber();
         switch(randomNumber){
             case: 1

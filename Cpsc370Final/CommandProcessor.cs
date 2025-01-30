@@ -4,6 +4,9 @@ public class CommandProcessor
 {
     public static Command GetCommand()
     {
+        IO.WriteLine($"\n~ Sandies: $*MONEY HERE* ~");
+        IO.Write("Input: ");
+        
         string input = IO.Read();
         Debugger.Write("Raw Input: [" + input + "]");
         Command command = Parser.Parse(input);
