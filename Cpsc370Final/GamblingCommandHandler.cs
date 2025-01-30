@@ -6,11 +6,8 @@ public class GamblingCommandHandler
     {
         {"bet", Bet},
         {"exit", Exit},
-        {"raise", Raise},
         {"hit", Hit},
-        {"fold", Fold},
         {"stay", Stay},
-        {"check", Check},
         {"play", Play}
     };
     
@@ -38,29 +35,14 @@ public class GamblingCommandHandler
     {
         Casino.Exit();
     }
-
-    private static void Check(Command command) //poker
-    {
-        //stay at current bet
-    }
-    private static void Fold(Command command) //poker
-    {
-        //lose the game
-    }
-    private static void Raise(Command command) //poker
-    {
-        Casino.raiseBet(int.Parse(command.Noun));
-    }
     private static void Stay(Command command) //blackjack
     {
         //command processor does not work with how i coded blackjack
-        //i will try to make it work when i make poker
         //Casino.Stay();
     }
     private static void Hit(Command command)//blackjack
     {
         //command processor does not work with how i coded blackjack
-        //i will try to make it work when i make poker
         //Casino.Hit();
     }
 

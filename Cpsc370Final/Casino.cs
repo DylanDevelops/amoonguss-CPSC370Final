@@ -2,18 +2,9 @@
 
 public static class Casino
 {
-    public static bool inPoker = false;
-    
-    
     public static int bet = 0;
 
     public static void setBet(int amount)
-    {
-        bet = amount;
-        SandieBank.removeSandiesFromBank(amount);
-    }
-
-    public static void raiseBet(int amount)
     {
         bet += amount;
         SandieBank.removeSandiesFromBank(amount);
@@ -21,17 +12,14 @@ public static class Casino
 
     public static void Play(string gameName)
     {
-        if(inPoker)
-        {
-            IO.Write("Already in Poker match");
-        }
-        else if (Blackjack.inBlackjack)
+
+        if (Blackjack.inBlackjack)
         {
             IO.Write("Already in Blackjack match");
         }
-        else if (gameName.ToLower() == "poker")
+        else if (gameName.ToLower() == "slots")
         {
-            //poker.StartGame();
+            Slots.StartGame();
         }
         else if (gameName.ToLower() == "blackjack")
         {
@@ -55,11 +43,6 @@ public static class Casino
             Blackjack.inBlackjack = false;
             
         }
-        else if (inPoker)
-        {
-            //add winning to playerbank
-            inPoker = false;
-        }
         bet = 0;
         Game.Play();
     }
@@ -68,7 +51,6 @@ public static class Casino
     {
         bet = 0;
         Blackjack.inBlackjack = false;
-        inPoker = false;
         Game.Play();
     }
     public static void Exit()
