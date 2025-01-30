@@ -47,6 +47,15 @@ public class ClickingCommandHandler
     
     private static void Casino(Command command)
     {
+        IO.WriteLine("You are entering the casino!");
+        IO.WriteLine("You can play blackjack");
+        IO.WriteLine("Type play blackjack");
+        IO.WriteLine("you must bet before playing blackjack by typing bet (amount)");
+        IO.WriteLine("minimum bet is 10");
+        IO.WriteLine("You can also play slots");
+        IO.WriteLine("Type play slots");
+        IO.WriteLine("It costs 10 to play slots");
+        
         States.ChangeState(StateType.Gambling);
     }
 }

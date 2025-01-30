@@ -37,6 +37,7 @@ public class GamblingCommandValidater
                 else
                 {
                     IO.WriteLine("Invalid noun or bet/raise values amount. All bet/raise values must be at least 10 and at most 1000");
+                    IO.WriteLine("You also cant bet more than you actually have");
                 }
                 
             }
