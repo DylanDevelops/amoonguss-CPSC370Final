@@ -4,7 +4,7 @@ public class RivalingCommandHandler
 {
     private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
     {
-        {"throw", Throw},
+        {"play", Play},
         {"exit", Exit}
     };
     
@@ -23,9 +23,9 @@ public class RivalingCommandHandler
     }
 
 
-    private static void Throw(Command command)
+    private static void Play(Command command)
     {
-        //lose the game or something
+        Rivals.StartGame(command.Noun);
     }
     
     private static void Exit(Command command)

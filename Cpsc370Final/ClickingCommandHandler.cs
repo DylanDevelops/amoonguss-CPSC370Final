@@ -26,7 +26,7 @@ public class ClickingCommandHandler
 
     private static void Click(Command command)
     {
-        IO.Write("You clicked: +" + Player.SandiesPerClick);
+        IO.WriteLine("You clicked: +" + Player.SandiesPerClick);
         Player.Click();
     }
 
@@ -48,7 +48,9 @@ public class ClickingCommandHandler
         if (Cpsc370Final.Rivals.hasRivals)
         {
             IO.WriteLine("You are entering sandie rivals!");
-        
+            IO.WriteLine("To play sandie rivals type play followed by any of the 3 classes");
+            IO.WriteLine("dps, support, or tank");
+            IO.WriteLine("Example: play tank");
             States.ChangeState(StateType.Rivaling);
         }
         else
