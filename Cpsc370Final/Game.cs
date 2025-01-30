@@ -13,6 +13,15 @@ public static class Game
         }
         while (isPlaying)
         {
+            if (States.GetCurrentState() == StateType.Clicking)
+            {
+                Random random = new Random();
+                int randomNumber = random.Next(1, 11);
+                if (randomNumber == 10)
+                {
+                    RandomEvent.GetRandomEvent();
+                }
+            }
             Command command = CommandProcessor.GetCommand();
             if (command.IsValid)
             {

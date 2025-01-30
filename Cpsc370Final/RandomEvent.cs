@@ -12,19 +12,19 @@ public static class RandomEvent{
             case 1:
                 randomEvent = TaxesEvent(numSandies);
                 break;
-            case 2:
+            /*case 2:
                 //randomEvent = longerWordEvent();
-                break;
-            case 3:
+                break;*/
+            case 2:
                 randomEvent = ChocolateEvent();
                 break;
-            case 4:
+            case 3:
                 randomEvent = TreatEvent(numSandies);
                 break;
-            case 5:
+            case 4:
                 randomEvent = WalkEvent(numSandies);
                 break;
-            case 6:
+            case 5:
                 randomEvent = -1;                
                 break;
         }
@@ -39,10 +39,10 @@ public static class RandomEvent{
         return (int)taxedAmount;
     }
 
-    public static string LongerWordEvent()
+    /*public static string LongerWordEvent()
     {
         return " ";
-    }
+    }*/
 
     public static int ChocolateEvent(){
         IO.WriteLine("Sandie ate some choclate.");

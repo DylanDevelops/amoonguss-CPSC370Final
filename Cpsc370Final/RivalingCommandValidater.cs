@@ -21,15 +21,15 @@ public class RivalingCommandValidater
                 }
                 
             }
-            else if (Vocabulary.IsNoun(command.Noun))
+            else if (Vocabulary.IsNoun(command.Noun) && (command.Noun == "support" || command.Noun == "dps" || command.Noun == "tank"))
             {
-                Debugger.Write("Valid noun");
+                Debugger.Write("Valid class");
                 command.IsValid = true;
                 
             }
             else
             {
-                IO.WriteLine("I don't know the noun " + command.Noun + ".");
+                IO.WriteLine("I don't know the noun/class " + command.Noun + ".");
             }
         }
         else

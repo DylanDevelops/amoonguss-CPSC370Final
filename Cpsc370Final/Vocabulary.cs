@@ -7,7 +7,7 @@ public class Vocabulary
     public static List<string> standaloneVerbs = new List<string>()
         {"click", "quit", "casino", "rivals", "hit", "stay", "exit", "shop"};
     public static List<string> nouns = new List<string>()
-        {"casino", "rivals", "slots", "blackjack", "jon", "slingshot", "cloner", "farm", "typeless", "costume", "prices"};
+        {"casino", "rivals", "slots", "blackjack", "jon", "slingshot", "cloner", "farm", "typeless", "costume", "prices", "support", "dps", "tank"};
 
     public static bool IsVerb(string word)
     {
