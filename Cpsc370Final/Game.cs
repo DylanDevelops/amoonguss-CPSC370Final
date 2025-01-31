@@ -44,6 +44,7 @@ public static class Game
         Player.Initialize();
         SandieBank.initialize();
         States.Initialize();
+        Inventory.Initialize();
         IO.WriteLine("type help for info on how to play the game.");
     }
     
