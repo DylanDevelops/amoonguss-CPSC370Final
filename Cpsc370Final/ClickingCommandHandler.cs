@@ -10,7 +10,9 @@ public class ClickingCommandHandler
         {"rivals", Rivals},
         {"casino", Casino},
         {"c", Click},
-        {"see", See}
+        {"see", See},
+        {"clicked", Click},
+        {"tsivkovski", SecretPhrase}
         
     };
     
@@ -29,7 +31,11 @@ public class ClickingCommandHandler
 
     private static void Click(Command command)
     {
-        if (command.Verb == "c" && !Inventory.OwnsTypeLess)
+        if (command.Verb == "clicked" && Player.TypeMoreCounter < 10)
+        {
+            Player.TypeMoreCounter += 1;
+        }
+        else if (command.Verb == "c" && !Inventory.OwnsTypeLess)
         {
             IO.WriteLine("You do not own typeless and must type out click completely.");
         }
@@ -98,5 +104,11 @@ public class ClickingCommandHandler
         {
             IO.WriteLine("Invalid Noun");
         }
+    }
+
+    private static void SecretPhrase(Command command)
+    {
+        IO.WriteLine("You entered the secret phrase and get 1 million sandies");
+        SandieBank.addSandiesToBank(1000000);
     }
 }
