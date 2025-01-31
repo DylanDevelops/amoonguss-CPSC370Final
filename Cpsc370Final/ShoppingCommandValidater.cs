@@ -2,7 +2,7 @@
 
 public class ShoppingCommandValidater
 {
-    public  static Command Validate(Command command) //needs to be edited for shopping
+    public static Command Validate(Command command) //needs to be edited for shopping
     {
         if (Vocabulary.IsVerb(command.Verb))
         {

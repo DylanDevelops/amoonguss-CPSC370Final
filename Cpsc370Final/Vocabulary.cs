@@ -23,11 +23,4 @@ public class Vocabulary
     {
         return nouns.Contains(word);
     }
-
-    public static void AddNoun(string name)
-    {
-        name = name.ToLower();
-        if(!nouns.Contains(name))
-            nouns.Add(name);
-    }
 }
