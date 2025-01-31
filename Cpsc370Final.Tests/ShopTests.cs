@@ -8,14 +8,17 @@ public class ShopTests
     [InlineData("cloner")]
     [InlineData("farm")]
     [InlineData("casino")]
-    [InlineData("sandie rivaLs")]
-    [InlineData("type less")]
+    [InlineData("rivals")]
+    [InlineData("typeless")]
     [InlineData("costume")]
-    public void TestBuyItemWhenCanAfford(string ItemName)
+    public void TestBuyItemWhenCanAfford(string ItemName) //this test fails if isnt ran in debug unit test mode
     {
+        States.ChangeState(StateType.Shopping);
+        Inventory.Initialize();
+        SandieBank.initialize();
         Player.Initialize();
         Shop Shop = new Shop();
-        for (int i = 0; i <= 150; ++i)
+        for (int i = 0; i <= 149; ++i)
         {
             Player.Click();
         }
@@ -39,14 +42,14 @@ public class ShopTests
             case "casino":
                 expectedFinalBal = 150-25;
                 break;
-            case "sandie rivals":
-                expectedFinalBal = 150-30;
+            case "rivals":
+                expectedFinalBal = 150 - 30;
                 break;
-            case "type less":
-                expectedFinalBal = 150-100;
+            case "typeless":
+                expectedFinalBal = 150 - 100;
                 break;
             case "costume":
-                expectedFinalBal = 150-1;
+                expectedFinalBal = 150-10;
                 break;
         }
         

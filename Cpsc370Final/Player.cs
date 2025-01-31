@@ -8,7 +8,7 @@ public static class Player
     public static void Initialize()
     {
         SandiesPerClick = 1;
-        SandiesPerClick = 1;
+        SandiesPerClick = 1; //why the fuck does this cause statechange unit test to fail if it gets deleted its duplicated code
         TypeMoreCounter = 10;
     }
 

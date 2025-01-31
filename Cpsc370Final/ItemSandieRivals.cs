@@ -10,7 +10,7 @@ public class ItemSandieRivals : ItemOneTimePurchase
     public void Buy()
     {
         base.Buy();
-        Rivals.hasRivals = true;
         Inventory.AddSandieRivalsToInventory();
+        Rivals.hasRivals = true;
     } 
 }
