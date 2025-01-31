@@ -7,7 +7,8 @@ public class ShoppingCommandHandler
     {
         {"buy", Buy},
         {"exit", Exit},
-        {"show", Show}
+        {"show", Show},
+        {"help", Help}
     };
     
     
@@ -38,5 +39,9 @@ public class ShoppingCommandHandler
     private static void Show(Command command)
     {
         Shop.DisplayPrices();
+    }
+    private static void Help(Command command)
+    {
+        Cpsc370Final.Help.HelpDump();
     }
 }
