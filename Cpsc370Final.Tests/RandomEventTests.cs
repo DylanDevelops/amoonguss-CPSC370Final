@@ -1,10 +1,8 @@
 namespace Cpsc370Final.Tests;
 using Xunit;
 
-
 public class RandomEventTests
 {
-
     [Fact]
     public void TestTaxesEvent(){
         int testAmount = RandomEvent.TaxesEvent(10);
