@@ -11,7 +11,7 @@ public class ShopTests
     [InlineData("sandie rivaLs")]
     [InlineData("type less")]
     [InlineData("costume")]
-    public void TestBuyItemWhenCanAffort(string ItemName)
+    public void TestBuyItemWhenCanAfford(string ItemName)
     {
         Player.Initialize();
         Shop Shop = new Shop();

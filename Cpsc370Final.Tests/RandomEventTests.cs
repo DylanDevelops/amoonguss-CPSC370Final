@@ -2,7 +2,7 @@ namespace Cpsc370Final.Tests;
 using Xunit;
 
 
-public class UnitTest1
+public class RandomEventTests
 {
 
     [Fact]
