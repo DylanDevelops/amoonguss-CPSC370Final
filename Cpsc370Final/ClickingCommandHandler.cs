@@ -12,7 +12,8 @@ public class ClickingCommandHandler
         {"c", Click},
         {"see", See},
         {"clicked", Click},
-        {"tsivkovski", SecretPhrase}
+        {"tsivkovski", SecretPhrase},
+        {"help", Help}
         
     };
     
@@ -34,13 +35,19 @@ public class ClickingCommandHandler
         if (command.Verb == "clicked" && Player.TypeMoreCounter < 10)
         {
             Player.TypeMoreCounter += 1;
+            IO.WriteLine("You clicked: +" + Player.SandiesPerClick);
+            Player.Click();
         }
         else if (command.Verb == "c" && !Inventory.OwnsTypeLess)
         {
             IO.WriteLine("You do not own typeless and must type out click completely.");
         }
-        IO.WriteLine("You clicked: +" + Player.SandiesPerClick);
-        Player.Click();
+        else
+        {
+            IO.WriteLine("You clicked: +" + Player.SandiesPerClick);
+            Player.Click();
+        }
+        
     }
 
     private static void Quit(Command command)
@@ -110,5 +117,9 @@ public class ClickingCommandHandler
     {
         IO.WriteLine("You entered the secret phrase and get 1 million sandies");
         SandieBank.addSandiesToBank(1000000);
+    }
+    private static void Help(Command command)
+    {
+        Cpsc370Final.Help.HelpDump();
     }
 }

@@ -5,7 +5,8 @@ public class RivalingCommandHandler
     private static Dictionary<string, Action<Command>> commandMap = new Dictionary<string, Action<Command>>()
     {
         {"play", Play},
-        {"exit", Exit}
+        {"exit", Exit},
+        {"help", Help}
     };
     
     
@@ -31,5 +32,10 @@ public class RivalingCommandHandler
     private static void Exit(Command command)
     {
         States.ChangeState(StateType.Clicking);
+    }
+    
+    private static void Help(Command command)
+    {
+        Cpsc370Final.Help.HelpDump();
     }
 }

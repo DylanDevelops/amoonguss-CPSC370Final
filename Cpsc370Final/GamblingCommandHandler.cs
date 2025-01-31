@@ -6,9 +6,8 @@ public class GamblingCommandHandler
     {
         {"bet", Bet},
         {"exit", Exit},
-        {"hit", Hit},
-        {"stay", Stay},
-        {"play", Play}
+        {"play", Play},
+        {"help", Help}
     };
     
     
@@ -24,8 +23,7 @@ public class GamblingCommandHandler
             IO.WriteLine("I don't understand that command.");
         }
     }
-
-
+    
     private static void Bet(Command command)
     {
         Casino.setBet(int.Parse(command.Noun));
@@ -35,19 +33,13 @@ public class GamblingCommandHandler
     {
         Casino.Exit();
     }
-    private static void Stay(Command command) //blackjack
-    {
-        //command processor does not work with how i coded blackjack
-        //Casino.Stay();
-    }
-    private static void Hit(Command command)//blackjack
-    {
-        //command processor does not work with how i coded blackjack
-        //Casino.Hit();
-    }
 
     private static void Play(Command command)
     {
         Casino.Play(command.Noun);
+    }
+    private static void Help(Command command)
+    {
+        Cpsc370Final.Help.HelpDump();
     }
 }
