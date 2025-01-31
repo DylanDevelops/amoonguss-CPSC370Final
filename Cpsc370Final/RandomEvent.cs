@@ -12,19 +12,19 @@ public static class RandomEvent{
             case 1:
                 randomEvent = TaxesEvent(numSandies);
                 break;
-            /*case 2:
-                //randomEvent = longerWordEvent();
-                break;*/
             case 2:
-                randomEvent = ChocolateEvent();
+                randomEvent = LongerWordEvent();
                 break;
             case 3:
-                randomEvent = TreatEvent(numSandies);
+                randomEvent = ChocolateEvent();
                 break;
             case 4:
-                randomEvent = WalkEvent(numSandies);
+                randomEvent = TreatEvent(numSandies);
                 break;
             case 5:
+                randomEvent = WalkEvent(numSandies);
+                break;
+            case 6:
                 randomEvent = -1;                
                 break;
         }
@@ -39,10 +39,12 @@ public static class RandomEvent{
         return (int)taxedAmount;
     }
 
-    /*public static string LongerWordEvent()
+    public static int LongerWordEvent()
     {
-        return " ";
-    }*/
+        IO.WriteLine("You now have to write clicked instead of click to click for the next 10 inputs");
+        Player.TypeMoreCounter = 0;
+        return 0;
+    }
 
     public static int ChocolateEvent(){
         IO.WriteLine("Sandie ate some choclate.");
@@ -69,7 +71,7 @@ public static class RandomEvent{
 
     public static int GenRandomNumber(){
         Random rnd = new Random();
-        int randomInteger = rnd.Next(1,5);
+        int randomInteger = rnd.Next(1,6);
         return randomInteger;
     }
 

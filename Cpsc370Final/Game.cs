@@ -13,6 +13,13 @@ public static class Game
         }
         while (isPlaying)
         {
+            
+            Command command = CommandProcessor.GetCommand();
+            if (command.IsValid)
+            {
+                Debugger.Write(command.toString());
+                CommandHandler.Handle(command);
+            }
             if (States.GetCurrentState() == StateType.Clicking)
             {
                 Random random = new Random();
@@ -21,12 +28,6 @@ public static class Game
                 {
                     RandomEvent.GetRandomEvent();
                 }
-            }
-            Command command = CommandProcessor.GetCommand();
-            if (command.IsValid)
-            {
-                Debugger.Write(command.toString());
-                CommandHandler.Handle(command);
             }
         }
     }
