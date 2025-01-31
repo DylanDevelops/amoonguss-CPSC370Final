@@ -49,7 +49,10 @@ public class Shop
                 TypeLess.Buy();
                 break;
             case "costume":
-                Costume.Buy();
+                if (Inventory.CostumeNumber < 10)
+                {
+                    Costume.Buy(); 
+                }
                 break;
         }
     }
