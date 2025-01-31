@@ -84,6 +84,14 @@ public class Shop
         {
             IO.WriteLine($"~ typeless: " + TypeLess.getCurrentCost());
         }
-        IO.WriteLine($"~ costume: " + Costume.getCurrentCost());
+
+        if (Inventory.CostumeNumber == 10)
+        {
+            IO.WriteLine($"~ costume: Purchased");
+        }
+        else
+        {
+            IO.WriteLine($"~ costume: " + Costume.getCurrentCost());
+        }
     }
 }

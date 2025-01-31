@@ -3,9 +3,9 @@
 public class Vocabulary
 {
     public static List<string> notStandaloneVerbs = new List<string>()
-        {"buy", "bet", "play", "show"};
+        {"buy", "bet", "play", "show", "see"};
     public static List<string> standaloneVerbs = new List<string>()
-        {"click", "quit", "casino", "rivals", "hit", "stay", "exit", "shop"};
+        {"click", "quit", "casino", "rivals", "hit", "stay", "exit", "shop", "c"};
     public static List<string> nouns = new List<string>()
         {"casino", "rivals", "slots", "blackjack", "jon", "slingshot", "cloner", "farm", "typeless", "costume", "prices", "support", "dps", "tank"};
 
