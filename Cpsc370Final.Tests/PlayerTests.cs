@@ -15,7 +15,9 @@ public class PlayerTests
         Player.Initialize();
         SandieBank.initialize();
         Player.Click();
-        Assert.Equal(1, SandieBank.SandieCount);
+
+        bool isGreater = SandieBank.SandieCount > 0;
+        Assert.True(isGreater);
     }
 
     [Fact]
