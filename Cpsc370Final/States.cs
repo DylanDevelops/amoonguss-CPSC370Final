@@ -19,7 +19,7 @@ public class States
         return CurrentState.Type;
     }
 
-    public static void AddState(StateType type)
+    private static void AddState(StateType type)
     {
         State state = new State(type);
         if (!states.ContainsKey(state.Type))
