@@ -8,7 +8,10 @@ public class ClickingCommandHandler
         {"quit", Quit},
         {"shop", Shop},
         {"rivals", Rivals},
-        {"casino", Casino}
+        {"casino", Casino},
+        {"c", Click},
+        {"see", See}
+        
     };
     
     public static void Handle(Command command)
@@ -26,6 +29,10 @@ public class ClickingCommandHandler
 
     private static void Click(Command command)
     {
+        if (command.Verb == "c" && !Inventory.OwnsTypeLess)
+        {
+            IO.WriteLine("You do not own typeless and must type out click completely.");
+        }
         IO.WriteLine("You clicked: +" + Player.SandiesPerClick);
         Player.Click();
     }
@@ -79,5 +86,17 @@ public class ClickingCommandHandler
             IO.WriteLine("You don't have access to casino!");
         }
         
+    }
+
+    private static void See(Command command)
+    {
+        if (command.Noun == "costume")
+        {
+            Costume.showCostume();
+        }
+        else
+        {
+            IO.WriteLine("Invalid Noun");
+        }
     }
 }
